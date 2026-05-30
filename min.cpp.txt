@@ -1,0 +1,197 @@
+#include<iostream>
+#include<cmath>
+#include<string>
+using namespace std;
+string arr[100];
+int indexx = 0;
+void array(){
+    if(indexx==0){
+        cout<<"History is empty"<<endl;
+    }
+    else{
+        for(int i=0;i<indexx;i++){
+            cout<<arr[i]<<endl;
+        }
+    }
+    cout<<"\n"<<endl;
+}
+double add(double num1, double num2){
+    return num1+num2;
+}
+double subtract(double num1, double num2){
+    return num1-num2;
+}
+double multiply(double num1, double num2){
+    return num1*num2;
+}
+double divide(double num1, double num2){
+
+    if(num2==0){
+        cout<<"Error : Cannot divide by zero"<<endl;
+        return 0;
+    }
+    else{
+        return num1/num2;
+    }
+}
+int factorial(int n){
+    if( n==0 || n==1)
+        return 1;
+    else{
+        return n*factorial(n-1);
+    }
+}
+int main(){
+cout<<"** WELCOME **"<<endl;
+cout<<endl;
+cout<<"This is a Scientific Calculator "<<endl;
+int x=1;
+while (x>0){
+     cout<<"please choose the calculation operation "<<endl;
+     cout<<"1 . Plus (+)"<<endl;
+     cout<<"2 . Minus (-)"<<endl;
+     cout<<"3 . Multiply (*)"<<endl;
+     cout<<"4 . Divide (/)"<<endl;
+     cout<<"5 . Remainder operation (%)"<<endl;
+     cout<<"6 . Power "<<endl;
+     cout<<"7 . square root "<<endl;
+     cout<<"8 . power of the logarithmic constant (e)"<<endl;
+     cout<<"9 . absolute value "<<endl;
+     cout<<"10 . Factorial of a number"<<endl;
+     cout<<"11 . Sin "<<endl;
+     cout<<"12 . Cos "<<endl;
+     cout<<"13 . Tan "<<endl;
+     cout<<"14 . Show history"<<endl;
+     cout<<"{Press any other key to exit}"<<endl;
+     int chose;
+     cin>>chose;
+     if(chose==1){
+        double num1 , num2;
+        cout<<"Enter the first number :"<<endl;
+        cin>>num1;
+        cout<<"Enter the second number :"<<endl;
+        cin>>num2;
+        double result = add(num1,num2);
+        cout<<num1<<" + "<<num2<<" = ";
+        cout<<result<<endl;
+        arr[indexx] =
+        to_string(num1) + " + " +
+        to_string(num2) + " = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
+     else if(chose==2){
+        double num1 , num2;
+        cout<<"Enter the first number :"<<endl;
+        cin>>num1;
+        cout<<"Enter the second number :"<<endl;
+        cin>>num2;
+        double result = subtract(num1,num2);
+        cout<<num1<<" - "<<num2<<" = ";
+        cout<<result<<endl;
+        arr[indexx] =
+        to_string(num1) + " - " +
+        to_string(num2) + " = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
+     else if(chose==3){
+        double num1 , num2;
+        double result = divide(num1,num2);
+        cout<<num1<<" / "<<num2<<" = ";
+        cout<<result<<endl;
+        arr[indexx] =
+        to_string(num1) + " / " +
+        to_string(num2) + " = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
+     else if(chose==5){
+        double num1 , num2;
+        cout<<"Enter the first number :"<<endl;
+        cin>>num1;
+        cout<<"Enter the second number :"<<endl;
+        cin>>num2;
+        double result = fmod(num1,num2);
+        cout<<num1<<" % "<<num2<<" = ";
+        cout<<result<<endl;
+        arr[indexx] =
+        to_string(num1) + " % " +
+        to_string(num2) + " = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
+     else if(chose==6){
+        double num1 , num2;
+        int y;
+        cin>>y;
+        double result = sqrt(y);
+        cout<<result<<endl;
+        arr[indexx] =
+        "sqrt(" + to_string(y) + ") = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
+     else if(chose==8){
+        cout<<"please Enter a number "<<endl;
+        int z;
+        cin>>z;
+        double result = exp(z);
+        cout<<result<<endl;
+        arr[indexx] =
+        "exp(" + to_string(z) + ") = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
+     else if(chose==9){
+        cout<<"please Enter a number "<<endl;
+        int number;
+        cin>>number;
+        double result = fabs(number);
+        cout<<"[ "<<number<<" ] = ";
+        cout<<result<<endl;
+        arr[indexx] =
+        "|" + to_string(number) + "| = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+        arr[indexx] =
+        "sin(" + to_string(s) + ") = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
+     else if(chose==12){
+        cout<<"please Enter a number "<<endl;
+        double c;
+        cin>>c;
+        double radc = c*3.14159265/180;
+        double result = cos(radc);
+        cout<<"Cos("<<c<<") = ";
+        cout<<result<<endl;
+        arr[indexx] =
+        "cos(" + to_string(c) + ") = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
+     else if(chose==13){
+        cout<<"please Enter a number "<<endl;
+        double t;
+        cin>>t;
+        double radt = t*3.14159265/180;
+        double result = tan(radt);
+        cout<<"Tan("<<t<<") = ";
+        cout<<result<<endl;
+        arr[indexx] =
+        "tan(" + to_string(t) + ") = " +
+        to_string(result);
+        indexx++;
+        cout<<"\n"<<endl;
+     }
